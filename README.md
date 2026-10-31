@@ -4,7 +4,17 @@ Prototipo navegable, adaptable a móvil, sin herramientas de compilación. Todo 
 
 ## Ejecutar
 
-Sirve la carpeta `dist` con un servidor HTTP estático. No requiere instalar paquetes. `dist/index.html`, `styles.css` y `app.js` contienen la aplicación completa. Las fuentes se cargan de Google Fonts y hay alternativas locales.
+Con Node.js 20 o posterior, clona el repositorio y ejecuta:
+
+```sh
+git clone https://github.com/NigelCastilloR/sosfit.git
+cd sosfit
+npm start
+```
+
+Abre `http://127.0.0.1:4173`. No requiere `npm install`: usa exclusivamente módulos incluidos en Node.js. Para comprobar la sintaxis ejecuta `npm run check`.
+
+También puedes servir la carpeta `dist` con otro servidor HTTP estático. `dist/index.html`, `styles.css` y `app.js` contienen la aplicación completa. Las fuentes se cargan de Google Fonts y hay alternativas locales.
 
 ## Funciones reales de la demo
 
@@ -26,4 +36,8 @@ El botón Google muestra el estado de configuración: **no autentica ni simula a
 5. Sustituir o validar las ilustraciones con Esther. Si se usa wger, conservar autor, licencia y URL de cada recurso y cumplir sus términos. No usar la versión gratuita de ExerciseDB para monetización.
 6. Migrar el seguimiento a base de datos por usuario con permisos y exportación/borrado de cuenta.
 
-Las credenciales y los secretos no se incluyen en este repositorio. La configuración Sites en `.openai/hosting.json` identifica únicamente el hosting de la demo; no constituye un inicio de sesión de Google.
+Las credenciales y los secretos no se incluyen en este repositorio. La demo privada publicada se administra por separado en Sites. Este repositorio no contiene credenciales ni configuración de despliegue automático.
+
+## Propuesta y prioridades
+
+Consulta [la investigación y propuesta de producto](docs/propuesta.md). El repositorio contiene una demo, no una plataforma de cobros o autenticación lista para producción.

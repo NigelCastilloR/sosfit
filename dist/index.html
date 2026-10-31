@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c6f36b">
+  <meta name="description" content="SosFit, tu espacio de entrenamiento con Coach Esther. Prototipo interactivo de rutinas guiadas.">
+  <title>SosFit · Coach Esther</title>
+  <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+<aside class="sidebar">
+  <a href="#rutina" class="brand" aria-label="SosFit inicio">Sos<span>Fit</span><i>●</i><small>COACH ESTHER</small></a>
+  <div class="side-caption">TU ESPACIO DE ENTRENAMIENTO</div>
+  <nav aria-label="Navegación principal">
+    <button class="nav active" data-view="rutina"><span>▦</span> Mi rutina <b>01</b></button>
+    <button class="nav" data-view="biblioteca"><span>⊞</span> Ejercicios</button>
+    <button class="nav" data-view="progreso"><span>↗</span> Mi progreso</button>
+  </nav>
+  <div class="coach-card"><div class="coach-avatar">E<span>✦</span></div><strong>Coach Esther</strong><p>Un paso a la vez.<br>Un poquito más fuerte.</p><span class="coach-label">TU GUÍA EN CADA REPETICIÓN</span></div>
+  <div class="sidebar-bottom"><span class="green-dot"></span> Hecho para tu ritmo <small>SosFit · Primera versión</small></div>
+</aside>
+<div class="shell">
+  <header class="topbar"><span class="breadcrumb">Tu espacio <span>/</span> <b id="page-label">Mi rutina</b></span><div class="top-actions"><span class="demo-badge">DEMO INTERACTIVA</span><button class="login-button" id="login-open">Iniciar sesión <span>↗</span></button></div></header>
+  <main>
+    <section id="rutina-view" class="view">
+      <div class="heading"><div><div class="eyebrow">CONSTRUYE TU MEJOR VERSIÓN</div><h1>Tu momento de <em>moverte.</em></h1><p>Tu rutina, tu ritmo. Esther te acompaña en cada paso.</p></div><div class="heading-tag"><span>✦</span> Cada repetición cuenta</div></div>
+      <div class="dashboard-grid">
+        <div class="main-column">
+          <article class="hero">
+            <div class="hero-copy"><div class="pill"><span class="green-dot"></span> PLAN DE DEMOSTRACIÓN</div><h2>Pequeños pasos.<br><span>Más fuerza.</span></h2><p>Un espacio para conectar contigo<br>y disfrutar el proceso.</p><button class="primary" id="start-session">Empezar mi rutina <span>↗</span></button><div class="hero-meta"><span>◷ 30–40 min</span><span>◇ Sin prisas</span></div></div>
+            <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="art-label">MOVE WITH<br>INTENTION.</span><svg viewBox="0 0 300 330"><ellipse cx="152" cy="296" rx="105" ry="12" fill="#101810"/><path d="M119 175L90 226L61 276M159 179L195 224L231 265" stroke="#c6f36b" stroke-width="31" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M124 99L105 153L136 188L168 171L157 108Z" fill="#d6d9cf"/><path d="M120 110L91 147L55 139M155 115L182 150L219 133" stroke="#e6ae88" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M58 275L37 287L75 289M229 264L227 282L253 278" stroke="#f1f0e9" stroke-width="13" stroke-linecap="round" fill="none"/><circle cx="145" cy="73" r="24" fill="#e6ae88"/><path d="M120 70Q112 26 154 44Q177 45 170 77L155 60L124 63" fill="#272f22"/><path d="M123 48Q94 20 91 61Q92 86 70 78Q102 108 109 71Z" fill="#272f22"/><path d="M132 96L131 110L151 112L151 96" fill="#e6ae88"/><path d="M40 120L62 153M210 116L230 150" stroke="#71776c" stroke-width="13" stroke-linecap="round"/></svg><span class="art-chip">✦ &nbsp; FUERTE A TU MANERA</span></div>
+          </article>
+          <section class="routine-section" aria-labelledby="routine-heading"><div class="section-title"><div><span class="eyebrow">TU PLAN SEMANAL</span><h2 id="routine-heading">Vamos con tu rutina</h2></div><span class="muted small">3 sesiones de ejemplo</span></div>
+            <div class="day-tabs" role="tablist" aria-label="Sesiones de ejemplo"><button role="tab" aria-selected="true" class="day active" data-day="0"><small>DÍA 01</small><strong>Tren inferior</strong><span>Piernas y glúteos</span></button><button role="tab" aria-selected="false" class="day" data-day="1"><small>DÍA 02</small><strong>Tren superior</strong><span>Espalda y brazos</span></button><button role="tab" aria-selected="false" class="day" data-day="2"><small>DÍA 03</small><strong>Cuerpo completo</strong><span>Fuerza y estabilidad</span></button></div>
+            <div class="list-heading"><h3 id="day-heading">Tren inferior</h3><span id="session-count">0 de 3 completados</span></div>
+            <div id="exercise-list"></div>
+            <p class="list-help"><span>▷</span> Toca el nombre del ejercicio para ver cómo se mueve.</p>
+          </section>
+        </div>
+        <aside class="right-column">
+          <article class="progress-card"><div class="card-heading"><h3>Tu avance</h3><span>↗</span></div><div class="progress-ring" id="progress-ring"><div><strong id="progress-number">0<span>%</span></strong><small>DE ESTA SESIÓN</small></div></div><h4>Todo empieza con una repetición</h4><p id="progress-message">Marca cada ejercicio cuando lo termines.</p><div class="mini-stats"><div><strong id="total-done">0</strong><small>Ejercicios hechos</small></div><div><strong id="total-sessions">0</strong><small>Sesiones completas</small></div></div></article>
+          <article class="note-card"><span class="note-icon">✳</span><span class="eyebrow">RECUÉRDALO HOY</span><h3>La constancia<br>también es progreso.</h3><p>No tienes que hacerlo perfecto.<br>Solo darte la oportunidad.</p><div class="note-sign">Con cariño, <b>Esther</b> ↗</div></article>
+          <div class="local-note"><span>ⓘ</span><p>Estás explorando una demo. Tus registros se guardan solo en este navegador.</p></div>
+        </aside>
+      </div>
+    </section>
+    <section id="biblioteca-view" class="view" hidden><div class="heading"><div><div class="eyebrow">APRENDE CADA MOVIMIENTO</div><h1>Tu biblioteca de <em>ejercicios.</em></h1><p>Abre un ejercicio para explorar su ilustración animada.</p></div></div><label class="search-label" for="search">Buscar ejercicio</label><input id="search" class="search" placeholder="Prueba: sentadilla, espalda, mancuernas…" type="search"><div class="filter-bar" aria-label="Filtrar ejercicios"><button class="filter active" data-filter="Todos" aria-pressed="true">Todos</button><button class="filter" data-filter="Tren inferior" aria-pressed="false">Tren inferior</button><button class="filter" data-filter="Tren superior" aria-pressed="false">Tren superior</button><button class="filter" data-filter="Core" aria-pressed="false">Core</button></div><div id="library-grid" class="library-grid"></div></section>
+    <section id="progreso-view" class="view" hidden><div class="heading"><div><div class="eyebrow">CADA PASO SUMA</div><h1>Tu esfuerzo deja <em>huella.</em></h1><p>Revisa lo que has registrado en esta demostración.</p></div></div><article class="history-card"><h2>Tu historial de ejercicios</h2><div id="history-list"></div><button class="outline" id="reset-progress">Borrar mis registros de demo</button></article></section>
+    <footer><span class="footer-brand">SosFit <b>·</b> Coach Esther</span><span>Hecho para moverte, pensado para ti.</span><button id="about-open">Sobre esta demo</button></footer>
+  </main>
+</div>
+<dialog id="exercise-dialog" class="exercise-dialog"><button class="close-dialog" data-close="exercise-dialog" aria-label="Cerrar ejercicio">×</button><div class="exercise-stage"><span class="stage-label">ILUSTRACIÓN DE PROTOTIPO</span><svg id="movement" viewBox="0 0 320 300" role="img" aria-label="Esquema animado del movimiento"><ellipse cx="160" cy="272" rx="100" ry="9" fill="#dce5cd"/><g id="body-lines" fill="none" stroke-linecap="round" stroke-linejoin="round"><path id="leg-left" stroke="#303e27" stroke-width="13"/><path id="leg-right" stroke="#5b7844" stroke-width="13"/><path id="torso" stroke="#879c42" stroke-width="24"/><path id="arm-left" stroke="#c19472" stroke-width="10"/><path id="arm-right" stroke="#ddb08b" stroke-width="10"/></g><circle id="figure-head" r="17" fill="#ddb08b"/></svg><button id="toggle-motion" class="motion-button">Pausar animación</button><p>Esquema visual de ejemplo.<br>La demostración final debe validarla Coach Esther.</p></div><div class="exercise-detail"><span class="eyebrow" id="exercise-category"></span><h2 id="exercise-title"></h2><p id="exercise-equipment" class="muted"></p><div class="exercise-specs" id="exercise-specs"></div><h3>Claves del movimiento</h3><ol id="exercise-steps"></ol><div class="log-fields"><label>Reps por serie<input type="number" min="1" max="999" step="1" id="log-reps" required></label><label>Carga (kg, opcional)<input type="number" min="0" max="999" step="0.5" id="log-load" placeholder="0"></label></div><button class="primary full" id="complete-exercise">Marcar ejercicio completado <span>✓</span></button><div class="timer-row"><span>Descanso <strong id="timer-value">01:00</strong></span><button id="timer-toggle" class="outline">Iniciar descanso</button><button id="timer-reset" class="text-button">Reiniciar</button></div><p id="exercise-status" role="status" class="small muted"></p></div></dialog>
+<dialog id="login-dialog" class="login-dialog"><button class="close-dialog" data-close="login-dialog" aria-label="Cerrar acceso">×</button><div class="login-brand"><a class="brand" href="#rutina">Sos<span>Fit</span><i>●</i><small>COACH ESTHER</small></a><div class="login-mark">✳</div><p>Un espacio para<br>tu mejor versión.</p></div><div class="login-content"><span class="eyebrow">TU ENTRENAMIENTO EMPIEZA AQUÍ</span><h2>Qué bueno verte.</h2><p>Accede a tus rutinas y lleva tu progreso contigo.</p><button class="google-button" id="google-login"><span>G</span> Continuar con Google</button><p id="google-status" role="status" class="small muted">El acceso con Google se activará al configurar el proyecto.</p><div class="divider"><span>mientras tanto</span></div><button class="primary full" data-close="login-dialog">Explorar la demo <span>↗</span></button><p class="small muted">La demo no crea cuentas ni procesa pagos.</p></div></dialog>
+<dialog id="about-dialog" class="about-dialog"><button class="close-dialog" data-close="about-dialog" aria-label="Cerrar información">×</button><span class="eyebrow">PRIMERA VERSIÓN</span><h2>SosFit · Coach Esther</h2><p>Esta demo permite explorar rutinas, ver esquemas animados, registrar repeticiones y carga, y usar un temporizador de descanso.</p><p>Los ejercicios y planes son ejemplos para revisar el producto con Esther. Las ilustraciones son originales de este prototipo y requieren validación técnica antes de ofrecerlas a clientes.</p><p>Los registros se guardan en este navegador. Aún no hay cuentas, cobros, asignación de rutinas ni sincronización entre dispositivos.</p></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+</body>
+</html>
